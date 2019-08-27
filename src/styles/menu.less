@@ -1,0 +1,20 @@
+@import './config.less';
+
+.container {
+    display: block;
+    width: 100%;
+    background-color: @themeColor;
+    border-radius: @borderRadius;
+
+    & .link {
+        display: inline-block;
+        padding: 6px 12px;
+        color: lighten(@themeColor, 25%);
+        text-decoration: none;
+
+        &:hover,
+        &.active {
+            color: #fff;
+        }
+    }
+}

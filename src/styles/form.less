@@ -1,0 +1,42 @@
+@import  './config.less';
+
+.row {
+    display: block;
+
+    & .label {
+        display: block;
+        font-weight: 600;
+        padding: 2px 0;
+        text-transform: uppercase;
+        font-size: 0.9em;
+    }
+
+    & .input {
+        display: block;
+
+        & input {
+            padding: 6px;
+            border: 1px solid #d8d8d8;
+            margin: 2px 0;
+            width: 100%;
+            font-size: 1.0em;
+            border-radius: @borderRadius;
+        }
+    }
+}
+
+.submit {
+    padding: 6px 12px;
+    background-color: @themeColor;
+    color: #f5f5f5;
+    font-size: 1.0em;
+    border: none;
+    border-radius: @borderRadius;
+    cursor: pointer;
+    margin: 12px 0;
+    font-weight: 600;
+
+    &:hover {
+        background-color: lighten(@themeColor, 5%);
+    }
+}
