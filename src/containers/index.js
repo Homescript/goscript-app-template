@@ -4,6 +4,8 @@ import { Switch, Route } from 'react-router-dom';
 import styles from 'Styles';
 import ConfigContainer from 'Containers/config';
 import MenuContainer from 'Containers/menu';
+import DatabaseContainer from 'Containers/database';
+import TableDataContainer from 'Containers/table-data';
 
 class App extends React.Component {
 
@@ -18,10 +20,14 @@ class App extends React.Component {
                 <MenuContainer />
                 <Switch>
                     <Route exact path="/config" component={ConfigContainer} />
+                    <Route exact path="/database-tables" component={DatabaseContainer} />
+                    <Route exact path="/table-data/:tableName" component={TableDataContainer} />
                     <Route render={() => {
-                        return <div>
-                            <p>Dashboard</p>
-                        </div>
+                        return (
+                            <div>
+                                <h2>Dashboard</h2>
+                            </div>
+                        );
                     }} />
                 </Switch>
             </div>
