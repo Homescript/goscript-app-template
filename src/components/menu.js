@@ -11,6 +11,7 @@ export default props => {
             <NavLink exact to="/config" className={styles.menu.link} activeClassName={styles.menu.active}>Config</NavLink>
             <NavLink exact to="/database-tables" className={styles.menu.link} activeClassName={styles.menu.active}>Database Tables</NavLink>
             <NavLink exact to="/rpc" className={styles.menu.link} activeClassName={styles.menu.active}>RPC</NavLink>
+            <NavLink exact to="/event" className={styles.menu.link} activeClassName={styles.menu.active}>Event</NavLink>
         </div>
     )
 }
