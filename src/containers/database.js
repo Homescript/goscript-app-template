@@ -11,14 +11,17 @@ class DatabaseContainer extends React.Component {
 
         this.state = {
             tables: [],
+            queries: [],
             _pending: false
         }
     }
 
     async componentDidMount() {
         const schema = await goscript.database.schema();
+        const customQueries = await goscript.database.queries();
         this.setState({
-            tables: Object.keys(schema)
+            tables: Object.keys(schema),
+            queries: Object.values(customQueries),
         });
     }
 

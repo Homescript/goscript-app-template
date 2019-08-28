@@ -22,7 +22,7 @@ class App extends React.Component {
                 <MenuContainer />
                 <Switch>
                     <Route exact path="/config" component={ConfigContainer} />
-                    <Route exact path="/database-tables" component={DatabaseContainer} />
+                    <Route exact path="/database" component={DatabaseContainer} />
                     <Route exact path="/table-data/:tableName" component={TableDataContainer} />
                     <Route exact path="/rpc" component={RPCContainer} />
                     <Route exact path="/event" component={EventContainer} />
