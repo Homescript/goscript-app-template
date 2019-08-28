@@ -14,6 +14,7 @@
     & .input {
         display: block;
 
+        & textarea,
         & input {
             padding: 6px;
             border: 1px solid #d8d8d8;
@@ -21,8 +22,18 @@
             width: 100%;
             font-size: 1.0em;
             border-radius: @borderRadius;
+            outline: none;
+        }
+
+        & textarea {
+            min-height: 125px;
         }
     }
+}
+
+.error {
+    display: block;
+    color: rgb(250, 142, 142);
 }
 
 .submit {
