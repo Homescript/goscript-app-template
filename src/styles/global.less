@@ -1,3 +1,4 @@
+@import './config.less';
 
 :global {
     html, body {
@@ -14,7 +15,7 @@
         font-family: Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
         font-style: normal;
         -webkit-font-smoothing: antialiased;
-        font-size: 14px;
+        font-size: @fontSize;
         overflow-y: auto;
         line-height: 24px;
         font-weight: normal;
@@ -24,5 +25,22 @@
 
     * {
         box-sizing: border-box;
+    }
+
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: @fontSize;
+
+        & tr > th {
+            padding: 4px 6px;
+            text-align: left;
+            background-color: #f4f4f4;
+        }
+        & tr > td {
+            padding: 4px 6px;
+            text-align: left;
+        }
     }
 }

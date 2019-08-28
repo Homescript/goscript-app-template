@@ -13,14 +13,14 @@ class TableDataContainer extends React.Component {
             tableName: props.match.params.tableName || '',
             headers: [],
             data: [],
-            _pending: false
+            _pending: true
         }
     }
 
     async componentDidMount() {
         const schema = await goscript.database.schema();
 
-        const rawData = await schema[this.state.tableName].limit(1).run();
+        const rawData = await schema[this.state.tableName].limit(10).run();
 
         let headers = [];
         const data = rawData.map(row => {
@@ -35,6 +35,7 @@ class TableDataContainer extends React.Component {
         this.setState({
             headers,
             data,
+            _pending: false,
         });
     }
 
