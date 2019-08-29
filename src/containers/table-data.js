@@ -1,6 +1,6 @@
 import React from 'react';
 import autobind from 'class-autobind';
-import goscript from 'custom-ui-api';
+import goscript from 'goscript-app-api';
 import TableDataComponent from 'Components/table-data';
 
 class TableDataContainer extends React.Component {
