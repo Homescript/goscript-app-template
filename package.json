@@ -44,7 +44,7 @@
     "@fortawesome/free-solid-svg-icons": "^5.9.0",
     "@fortawesome/react-fontawesome": "^0.1.4",
     "class-autobind": "^0.1.4",
-    "@goscript/goscript-app-api": "@goscript/goscript-app-api",
+    "@goscript/goscript-app-api": "^0.0.1",
     "moment": "^2.24.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
