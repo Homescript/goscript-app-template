@@ -1,9 +1,29 @@
 const path = require('path');
+const webpack = require('webpack');
 const merge = require('webpack-merge');
 const ZipPlugin = require('zip-webpack-plugin');
 const common = require('./common.js');
 const pkg = require('../package.json');
 const libraryName= pkg.name;
+
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const htmlWebpackPlugin = new HtmlWebpackPlugin({
+    template: path.join(__dirname, "../public/index.html"),
+    filename: "./index.html",
+    inject: false,
+    minify: {
+        removeComments: true,
+        collapseWhitespace: true,
+        removeRedundantAttributes: true,
+        useShortDoctype: true,
+        removeEmptyAttributes: true,
+        removeStyleLinkTypeAttributes: true,
+        keepClosingSlash: true,
+        minifyJS: true,
+        minifyCSS: true,
+        minifyURLs: true,
+    },
+});
 
 module.exports = merge(
     common,
@@ -18,7 +38,7 @@ module.exports = merge(
             globalObject: 'self',
             path: path.resolve(__dirname, '../dist'),
             filename: 'index.bundle.js',
-            publicPath: '/app/f04466ff-0f0f-498f-9588-1acbb5a45daa/',
+            publicPath: '/',
             library: libraryName,
             libraryTarget: 'umd',
             umdNamedDefine: true,
@@ -42,9 +62,17 @@ module.exports = merge(
             }
         },
         plugins: [
+            htmlWebpackPlugin,
+            new webpack.DefinePlugin({
+                'process.env':{
+                    'NODE_ENV': JSON.stringify('production'),
+                    'SERVICE_ID': null,
+                    'API_KEY': null,
+                }
+            }),
             new ZipPlugin({
                 filename: 'goscript-ui.zip',
-            })
+            }),
         ]
     }
 );

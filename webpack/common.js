@@ -1,25 +1,6 @@
 // Checkout: https://medium.com/dailyjs/building-a-react-component-with-webpack-publish-to-npm-deploy-to-github-guide-6927f60b3220
 // and: https://itnext.io/how-to-package-your-react-component-for-distribution-via-npm-d32d4bf71b4f
-const path = require('path');
 const webpack = require('webpack');
-
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const htmlWebpackPlugin = new HtmlWebpackPlugin({
-    template: path.join(__dirname, "../public/index.html"),
-    filename: "./index.html",
-    minify: {
-        removeComments: true,
-        collapseWhitespace: true,
-        removeRedundantAttributes: true,
-        useShortDoctype: true,
-        removeEmptyAttributes: true,
-        removeStyleLinkTypeAttributes: true,
-        keepClosingSlash: true,
-        minifyJS: true,
-        minifyCSS: true,
-        minifyURLs: true,
-    },
-});
 
 const Dotenv = require('dotenv-webpack');
 const dotenv = new Dotenv();
@@ -135,7 +116,6 @@ module.exports = {
     },
     plugins: [
         dotenv,
-        htmlWebpackPlugin,
         copyWebpackPlugin,
         caseSensitivePathsPlugin,
         compressionPlugin,

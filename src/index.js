@@ -1,3 +1,4 @@
+import './public-path';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
@@ -12,7 +13,7 @@ goscript.init()
     // setTimeout here to load the .less styles in dev
     setTimeout(() => {
         ReactDOM.render(
-            <BrowserRouter basename={`/app/${process.env.SERVICE_ID}`}>
+            <BrowserRouter basename={__webpack_public_path__}>
                 <App />
             </BrowserRouter>,
             document.getElementById('root')

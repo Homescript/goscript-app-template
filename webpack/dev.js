@@ -2,6 +2,24 @@ const merge = require('webpack-merge');
 const common = require('./common.js');
 const path = require('path');
 
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const htmlWebpackPlugin = new HtmlWebpackPlugin({
+    template: path.join(__dirname, "../public/index.html"),
+    filename: "./index.html",
+    minify: {
+        removeComments: true,
+        collapseWhitespace: true,
+        removeRedundantAttributes: true,
+        useShortDoctype: true,
+        removeEmptyAttributes: true,
+        removeStyleLinkTypeAttributes: true,
+        keepClosingSlash: true,
+        minifyJS: true,
+        minifyCSS: true,
+        minifyURLs: true,
+    },
+});
+
 module.exports = merge(
     common,
     {
@@ -52,6 +70,9 @@ module.exports = merge(
                 Selectors: path.resolve(__dirname, '../src/selectors'),
                 Styles: path.resolve(__dirname, '../src/styles'),
             }
-        }
+        },
+        plugins: [
+            htmlWebpackPlugin,
+        ]
     }
 );
