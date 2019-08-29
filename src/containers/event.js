@@ -1,6 +1,6 @@
 import React from 'react';
 import autobind from 'class-autobind';
-import goscript from 'goscript-app-api';
+import goscript from '@goscript/goscript-app-api';
 import EventComponent from 'Components/event';
 
 class EventContainer extends React.Component {

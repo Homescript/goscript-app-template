@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import App from 'Containers';
-import goscript from 'goscript-app-api';
+import goscript from '@goscript/goscript-app-api';
 
 // render a loading status while GoScript is configuring itself
 ReactDOM.render(<small>Loading...</small>, document.getElementById('root'));
