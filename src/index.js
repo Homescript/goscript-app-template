@@ -8,7 +8,7 @@ import goscript from '@goscript/goscript-app-api';
 // render a loading status while GoScript is configuring itself
 ReactDOM.render(<small>Loading...</small>, document.getElementById('root'));
 
-goscript.init()
+goscript.init(process.env.SERVICE_ID, process.env.API_KEY)
 .then(() => {
     // setTimeout here to load the .less styles in dev
     setTimeout(() => {
