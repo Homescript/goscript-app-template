@@ -19,4 +19,4 @@ goscript.init(process.env.SERVICE_ID, process.env.API_KEY)
             document.getElementById('root')
         )
     }, 5);
-});
+}).catch(e=>{}); // first init will reject when removing token from url
