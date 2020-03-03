@@ -1,6 +1,6 @@
 {
   "name": "goscript-app-template",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "dist/index.bundle.js",
   "scripts": {
