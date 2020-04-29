@@ -59,6 +59,7 @@ module.exports = merge(
                 Sagas: path.resolve(__dirname, '../src/sagas'),
                 Selectors: path.resolve(__dirname, '../src/selectors'),
                 Styles: path.resolve(__dirname, '../src/styles'),
+                Utils: path.resolve(__dirname, '../src/utils'),
             }
         },
         plugins: [
