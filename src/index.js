@@ -15,7 +15,7 @@ setTimeout(() => {
         </div>, document.getElementById('root'));
 }, 10);
 
-goscript.init(process.env.SERVICE_ID)
+goscript.init(process.env.SERVICE_ID, process.env.API_KEY)
 .then(() => {
     // setTimeout here to load the .less styles in dev
     setTimeout(() => {
