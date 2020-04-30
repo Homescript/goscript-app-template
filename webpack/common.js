@@ -34,6 +34,12 @@ module.exports = {
                                     '@babel/plugin-transform-react-jsx',
                                     '@babel/plugin-syntax-dynamic-import',
                                     'babel-plugin-minify-dead-code-elimination',
+                                    [
+                                        "@babel/plugin-proposal-class-properties",
+                                        {
+                                            "loose": true
+                                        }
+                                    ],
                                     ['@babel/plugin-transform-modules-commonjs',
                                         {
                                             "@fortawesome/free-solid-svg-icons": {
